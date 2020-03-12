@@ -1,18 +1,18 @@
-# Launch an EMR Cluster
+# Launch an EMR Cluster and Connect
 
-## Create a Cloud9 Development Environment
+## Create the EMR Cluster
 
 ### Navigate to the EMR Console
 
-* In the AWS Console, use the Services menu and navigate to the EMR console.  One way to do so, is to expand the Services top menu and type "EMR" in the service search field.
-
-Hint: use a different browser tab than you are using for your Cloud9 Development Environment, as we will be returning to Cloud9 multiple times.
+* In the AWS Console, navigate to the EMR console.  One way to do so, is to expand the Services top menu and type "EMR" in the service search field.
 
 ![screenshot](images/EMR1.png)
 
+Hint: be sure to use a different browser tab than you are using for your Cloud9 Development Environment, as we will be returning to the Cloud9 tab later.
+
 ### Create an EMR Cluster
 
-* Click "Create cluster"
+* In the EMR Console, click the "Create cluster" button
 
 ![screenshot](images/EMR2.png)
 
