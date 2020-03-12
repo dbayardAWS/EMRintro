@@ -6,9 +6,9 @@ Spin up Cluster
 ## Connect via Event Engine
 ## Create a Cloud9 Environment - https://github.com/dbayardAWS/Redshift-labs/blob/master/Cloud9Redshift.md
 ## Create a Key Pair
-## Launch EMR
-## Setup Security Group
-## Connect via SSH
+## 1c Launch EMR
+## 1c Setup Security Group
+## 1c Connect via SSH
 
 Hive and Pig
 ## Create S3 bucket and populate it
@@ -27,8 +27,6 @@ EMR Notebook
 ## Connect to EMR Notebook and open a new JupyterLab notebook
 ## Run PySpark in the Notebook
 
-aws ec2 create-key-pair --key-name EMRKeyPair --query 'KeyMaterial' --output text > key.pem
-chmod 0600 ~/environment/key.pem
 
 
 Then add cloud9 sg to EMR master sg
