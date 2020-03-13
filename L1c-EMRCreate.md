@@ -1,5 +1,9 @@
 # Launch an EMR Cluster and Connect
 
+# TODO: Add EMR paragraph
+
+yada yada yada
+
 ## Create the EMR Cluster
 
 ### Navigate to the EMR Console
@@ -16,7 +20,7 @@ Hint: be sure to use a different browser tab than you are using for your Cloud9 
 
 ![screenshot](images/EMR2.png)
 
-* Click on "Go to advanced options"
+* Then click on the "Go to advanced options" link
 
 ![screenshot](images/EMR3.png)
 
@@ -32,6 +36,11 @@ Hint: be sure to use a different browser tab than you are using for your Cloud9 
 
 ![screenshot](images/EMR6.png)
 
+# TODO: Add comments about Spot, Scaling
+
+yada yada yada
+
+
 * Leave the General Options page at their defaults and click Next
 
 ![screenshot](images/EMR7.png)
@@ -44,11 +53,14 @@ Hint: be sure to use a different browser tab than you are using for your Cloud9 
 
 ![screenshot](images/EMR9.png)
 
-* Your cluster will start creating:
+* Your cluster will start being provisioned:
 
 ![screenshot](images/EMR10.png)
 
 ### Update the Security Group for the Master Node
+
+While the EMR Cluster is being provisioned, we will adjust the Security Group for the EMR master node to allows your Cloud9 environment to connect via SSH.  The Security Group acts as firewall controlling who can access which ports on EMR.
+
 
 * Click on the link for the Security groups for Master to launch the EC2 Security Groups console page in a new browser tab
 
@@ -66,7 +78,7 @@ Hint: be sure to use a different browser tab than you are using for your Cloud9 
 
 ![screenshot](images/EMR14.png)
 
-* For the new rule, pick SSH from the first drop down.  Leave the second drop-down as Custom.  In the Source field to the right, start typing "sg".  This will pop-up a list of your Security Groups.  Pick the one that begins AWS-Cloud0-EMR-day.
+* For the new rule, pick SSH from the first drop down.  Leave the second drop-down as Custom.  In the Source field to the right, start typing "sg".  This will pop-up a list of your Security Groups.  Pick the one that begins AWS-Cloud9-EMR-day.
 
 ![screenshot](images/EMR15.png)
 
@@ -92,7 +104,7 @@ Hint: be sure to use a different browser tab than you are using for your Cloud9 
 
 ![screenshot](images/EMR20.png)
 
-* Hit enter to run the ssh command.  Type in yes when prompted.
+* Hit enter to run the ssh command.  Type in yes when asked if you want to continue connecting.
 
 
 ![screenshot](images/EMR21.png)
