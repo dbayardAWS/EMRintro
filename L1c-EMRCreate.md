@@ -8,11 +8,14 @@ yada yada yada
 
 ### Navigate to the EMR Console
 
-* In the AWS Console, navigate to the EMR console.  One way to do so, is to expand the Services top menu and type "EMR" in the service search field.
+* In the AWS Management Console, navigate to the EMR console.  One way to do so, is to expand the Services top menu and type "EMR" in the service search field.
 
 ![screenshot](images/EMR1.png)
 
 Hint: be sure to use a different browser tab than you are using for your Cloud9 Development Environment, as we will be returning to the Cloud9 tab later.
+
+Hint: you might need to go back to your Event Engine browser tab to re-launch the AWS Management Console.  If you do so, close the Event Engine's "AWS Console Login" popup if it is still showing.  Then from the Event Engine Team Dashboard page, click the "AWS Console" button, then click the "Open AWS Console" button.  That will get you a new AWS Management Console browser tab.
+
 
 ### Create an EMR Cluster
 
@@ -61,6 +64,9 @@ yada yada yada
 
 While the EMR Cluster is being provisioned, we will adjust the Security Group for the EMR master node to allows your Cloud9 environment to connect via SSH.  The Security Group acts as firewall controlling who can access which ports on EMR.
 
+* Click on the refresh icon on the right hand side of the cluster details page to update the cluster details
+
+![screenshot](images/EMR101.png)
 
 * Click on the link for the Security groups for Master to launch the EC2 Security Groups console page in a new browser tab
 
@@ -88,7 +94,7 @@ While the EMR Cluster is being provisioned, we will adjust the Security Group fo
 
 ### Connect to your EMR Cluster
 
-* Return to your EMR Console tab in your browser.  Your cluster should likely now say "Waiting Cluster ready".  You may also need to click the refresh icon on the right hand side of the page to refresh the details.  If it does not yet say Waiting, then wait a bit longer (or ask your instructor)
+* Return to your EMR Console tab in your browser.  Your cluster should likely now say "Waiting Cluster ready".  You may also need to click the refresh icon on the right hand side of the page to refresh the details.  If it does not yet say Waiting, then wait a bit longer (ask your instructor if it has been more than 10 minutes)
 
 ![screenshot](images/EMR17.png)
 

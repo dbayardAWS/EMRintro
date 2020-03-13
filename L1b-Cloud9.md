@@ -8,13 +8,19 @@ AWS Cloud9 comes with a terminal that includes sudo privileges to the managed Am
 
 ### Navigate to the Cloud9 Console
 
-* In the AWS Console, use the Services menu and navigate to the Cloud9 console.  One way to do so, is to expand the Services top menu and type "Cloud9" in the service search field.
+* In the AWS Management Console, navigate to the Cloud9 console.  One way to do so, is to type "Cloud9" in the service search field and then click on the Cloud9 result.
+
+![screenshot](images/C900.png)
+
+The Cloud9 Console page should now open:
 
 ![screenshot](images/C90.png)
 
 ### Create a Cloud9 development environment
 
-* In the Cloud9 console, click on "Create environment".  
+* In the Cloud9 console, click on the "Create environment" button 
+
+![screenshot](images/C901.png)
 
 * Enter "EMR_day" for the name.
 
@@ -26,11 +32,11 @@ AWS Cloud9 comes with a terminal that includes sudo privileges to the managed Am
 
 * On the "Configure settings" page, change the Cost-saving setting to "After four hours"
 
-* Click "Next step"
-
 ![screenshot](images/C92.png)
 
-* Click "Create environment"
+* Click "Next step" to advance to the Review page
+
+* At the bottom of the Review page, click "Create environment"
 
 ![screenshot](images/C93.png)
 
@@ -58,6 +64,7 @@ Cloud9 automatically configures the AWS CLI for our user.  We will use the AWS C
 ```
 aws ec2 create-key-pair --key-name EMRKeyPair --query 'KeyMaterial' --output text > ~/EMRKeyPair.pem
 chmod 0600 ~/EMRKeyPair.pem
+ls -l ~/EMRKeyPair.pem
 
 ```
 
