@@ -1,5 +1,9 @@
 # # Working with Hive and Pig, continued
 
+In this exercise, we will interact with our EMR Cluster using EMR Steps.
+
+Learn more about EMR Steps [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-overview.html#emr-overview-data-processing).
+
 ## Interacting with Hive via EMR Steps
 
 * In your Cloud9 environment, use the same terminal where you created your S3 bucket (which is NOT the terminal where you are connected via SSH to EMR) and run these commands:

@@ -1,131 +1,24 @@
-# EMRintro
-Intro to EMR
-dave
+# Introduction to Amazon EMR
 
-Spin up Cluster
-## Connect via Event Engine
-## Create a Cloud9 Environment - https://github.com/dbayardAWS/Redshift-labs/blob/master/Cloud9Redshift.md
-## Create a Key Pair
-## 1c Launch EMR
-## 1c Setup Security Group
-## 1c Connect via SSH
+Amazon EMR is the industry leading cloud-native big data platform for processing vast amounts of data quickly and cost-effectively at scale. Using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi (Incubating), and Presto, coupled with the dynamic scalability of Amazon EC2 and scalable storage of Amazon S3, EMR gives analytical teams the engines and elasticity to run Petabyte-scale analysis for a fraction of the cost of traditional on-premises clusters. EMR gives teams the flexibility to run use cases on single-purpose, short lived clusters that automatically scale to meet demand, or on long running highly available clusters using the new multi-master deployment mode.
 
-Hive and Pig
-## Create S3 bucket and populate it
-## Hive- create an external table and query it via Hive CLI
-## Hive- create another external table and insert into it via EMR Steps
-## Pig- convert data into Avro format via EMR Steps
+Learn more about Amazon EMR [here](https://aws.amazon.com/emr/)
 
-Spark
-## Spark- run a PySpark job via spark-submit CLI
-## Spark- run a PySpark job via EMR Steps
-## Logs- View the YARN Application Info
-## Logs- View the SparkUI/Spark History Info
-
-EMR Notebook
-## Launch EMR Notebook
-## Connect to EMR Notebook and open a new JupyterLab notebook
-## Run PySpark in the Notebook
+## Labs
+|Part |Lab Name |Lab Description |
+|---- |---- | ----|
+|1 |[1a - Getting Started](L1a-StartHere.md) |Connect to the AWS Management Console |
+| |[1b - Cloud9](L1a-Cloud9.md) |Create the Cloud9 Environment |
+| |[1c - EMR](L1a-EMRCreate.md) |Create the EMR Cluster |
+|2 |[2a - S3](L2a-S3.md) |Create and Populate your S3 Bucket |
+| |[2b - Hive CLI](L2b-HiveCLI.md) |Run Hive via Hive Shell CLI |
+| |[2c - Hive and EMR Steps](L2c-HiveStep.md) |Run Hive via EMR Steps |
+| |[2d - Pig and EMR Steps](L2d-PigStep.md) |Run Pig via EMR Steps |
+|3 |[3a - Spark Submit](L3a-SparkSubmit.md) |Run Spark via Spark Submit |
+| |[3b - Spark Logging](L3b-SparkMonitor.md) |Work with Spark Logs and Spark UI |
+|4 |[4 - EMR Notebooks](L4a-Notebook.md) |Run PySpark via EMR Notebooks/Jupyter |
+|5 |[5 - Next Steps](NextSteps.md) |Next Steps for EMR |
 
 
-
-
-cat <<\EOF00 > ny-taxi.pig
-DEFINE CSVLoader org.apache.pig.piggybank.storage.CSVLoader();
-
-NY_TAXI = LOAD '$INPUT' USING CSVLoader(',') AS
-  (vendor_id:int,
-  lpep_pickup_datetime:chararray,
-  lpep_dropoff_datetime:chararray,
-  store_and_fwd_flag:chararray,
-  rate_code_id:int,
-  pu_location_id:int,
-  do_location_id:int,
-  passenger_count:int,
-  trip_distance:double,
-  fare_amount:double,
-  mta_tax:double,
-  tip_amount:double,
-  tolls_amount:double,
-  ehail_fee:double,
-  improvement_surcharge:double,
-  total_amount:double,
-  payment_type:int,
-  trip_type:int);
-STORE NY_TAXI into '$OUTPUT' USING org.apache.pig.piggybank.storage.avro.AvroStorage();
-EOF00
-
-aws s3 cp ny-taxi.pig s3://$BUCKET/files/
-aws s3 ls s3://$BUCKET/files/
-
-go back to instructions...
-
-
-aws s3 ls s3://$BUCKET/output/pig/
-aws s3 cp s3://$BUCKET/output/pig/part-v000-o000-r-00000.avro /tmp/pigout.txt
-head -5 /tmp/pigout.txt | cat -v
-
-
---------------
-cat <<\EOF00 > spark-etl.py
-import sys
-from datetime import datetime
-
-from pyspark.sql import SparkSession
-from pyspark.sql.functions import *
-
-if __name__ == "__main__":
-
-    print(len(sys.argv))
-    if (len(sys.argv) != 3):
-        print("Usage: spark-etl [input-folder] [output-folder]")
-        sys.exit(0)
-
-    spark = SparkSession\
-        .builder\
-        .appName("SparkETL")\
-        .getOrCreate()
-
-    nyTaxi = spark.read.option("inferSchema", "true").option("header", "true").csv(sys.argv[1])
-
-    updatedNYTaxi = nyTaxi.withColumn("current_date", lit(datetime.now()))
-
-    updatedNYTaxi.printSchema()
-
-    print(updatedNYTaxi.show())
-
-    print("Total number of records: " + str(updatedNYTaxi.count()))
-    
-    updatedNYTaxi.write.parquet(sys.argv[2])
-EOF00
-
-scp -i key.pem spark-etl.py hadoop@ec2-3-88-129-248.compute-1.amazonaws.com:spark-etl.py
-echo RUN THIS COMMAND IN YOUR SSH TERMINAL TO EMR:
-echo spark-submit spark-etl.py s3://$BUCKET/input/ s3://$BUCKET/output/spark
-
-
-go back to instructions...
-
-
-aws s3 ls s3://$BUCKET/output/spark/
-
---hint: use s3 console UI to view this file and select from it
-
-
---- launch EMR notebook
---- pyspark
-
-## creates a ny-taxi.table file
-cat <<EOF00 > jupyter.py
-import sys
-from datetime import datetime
-from pyspark.sql.functions import *
-
-nyTaxi = spark.read.option("inferSchema", "true").option("header", "true").csv("s3://$BUCKET/input/")
-updatedNYTaxi = nyTaxi.withColumn("current_date", lit(datetime.now()))
-updatedNYTaxi.printSchema()
-print(updatedNYTaxi.show())
-print("Total number of records: " + str(updatedNYTaxi.count()))
-EOF00
 
 

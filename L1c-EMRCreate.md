@@ -1,8 +1,18 @@
 # Launch an EMR Cluster and Connect
 
-# TODO: Add EMR paragraph
+In this exercise, you will launch a new EMR Cluster.
 
-yada yada yada
+The central component of Amazon EMR is the cluster. A cluster is a collection of Amazon Elastic Compute Cloud (Amazon EC2) instances. Each instance in the cluster is called a node. Each node has a role within the cluster, referred to as the node type. Amazon EMR also installs different software components on each node type, giving each node a role in a distributed application like Apache Hadoop.
+
+The node types in Amazon EMR are as follows:
+
+* Master node: A node that manages the cluster by running software components to coordinate the distribution of data and tasks among other nodes for processing. The master node tracks the status of tasks and monitors the health of the cluster. Every cluster has a master node, and it's possible to create a single-node cluster with only the master node.
+
+* Core node: A node with software components that run tasks and store data in the Hadoop Distributed File System (HDFS) on your cluster. Multi-node clusters have at least one core node.
+
+* Task node: A node with software components that only runs tasks and does not store data in HDFS. Task nodes are optional.
+
+You can read more about the Architecture and Benefits of EMR [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-overview.html).
 
 ## Create the EMR Cluster
 
@@ -39,9 +49,7 @@ Hint: you might need to go back to your Event Engine browser tab to re-launch th
 
 ![screenshot](images/EMR6.png)
 
-# TODO: Add comments about Spot, Scaling
-
-yada yada yada
+Aside: One of the great benefits of EMR is its cost-saving capabilities thanks to Spot Instances and Auto-Scaling.  You can read more about EMR and Spot Instances [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances-guidelines.html#emr-plan-spot-scenarios) and about Auto-Scaling [here](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-scale-on-demand.html).
 
 
 * Leave the General Options page at their defaults and click Next

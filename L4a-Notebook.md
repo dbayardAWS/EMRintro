@@ -53,25 +53,25 @@ cat jupyter.py
 
 which will give you output like this:
 
-![screenshot](images/N6.png)
+![screenshot](images/N7.png)
 
 * Copy the generated script to your clipboard
 
-![screenshot](images/N7.png)
+![screenshot](images/N8.png)
 
 ## Create a PySpark Notebook
 
 * Back in the JupyterLab tab, click on PySpark under Notebook
 
-![screenshot](images/N8.png)
+![screenshot](images/N9.png)
 
 * In the empty paragraph, paste in the generated PySpark script
 
-![screenshot](images/N9.png)
+![screenshot](images/N10.png)
 
 * Click the Play icon to run it
 
-![screenshot](images/N10.png)
+![screenshot](images/N101.png)
 
 The paragraph will run for a few minutes and it will update its output as it runs.  You should see output like this:
 
