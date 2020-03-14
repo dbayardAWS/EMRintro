@@ -1,4 +1,4 @@
-# # Working with Hive and Pig, continued
+# Working with Hive and Pig, continued
 
 ## Interacting with Pig via EMR Steps
 

@@ -1,6 +1,6 @@
 # Working with Spark, continued
 
-There are several ways to monitor Spark job status, logs on Amazon EMR. Those are:
+There are several ways to monitor Spark job status and logs on Amazon EMR. Those are:
 
 - Check Spark job logs on the command line
 - Check YARN Application logs on Amazon EMR Console
@@ -8,13 +8,13 @@ There are several ways to monitor Spark job status, logs on Amazon EMR. Those ar
 
 ## Check Spark logs on the command line
 
-When Spark job submitted through spark-submit on the command line, it shows up logs on the console. You can pipe that output to a file and grep that file to troubleshoot or you can check the status, output, debug printout on the terminal as well. In the last exercise, you reviewed the logs from the command line, such as this:
+When Spark jobs are submitted through spark-submit on the command line, you can see logs on the console. You can pipe that output to a file and grep that file to troubleshoot or you can check the status, output, debug printout on the terminal as well. In the last exercise, you reviewed the logs from the command line, such as this:
 
 ![screenshot](images/SP6.png)
 
 ## Check YARN Application logs on Amazon EMR Console
 
-Spark job submitted on Amazon EMR cluster run as YARN application. you can view YARN application details using the Application history tab of a cluster's detail page in the console. Using Amazon EMR application history makes it easier for you to troubleshoot and analyze active jobs and job history. Instead of setting up and connecting to the master node to view open-source troubleshooting UIs or sift through log files, you can quickly view application metrics and access relevant log files.
+Spark jobs submitted on Amazon EMR clusters run as YARN applications. You can view YARN application details using the Application history tab of a cluster's detail page in the console. Using Amazon EMR application history makes it easier for you to troubleshoot and analyze active jobs and job history. Instead of setting up and connecting to the master node to view open-source troubleshooting UIs or sift through log files, you can quickly view application metrics and access relevant log files.
 
 * Go to Amazon EMR console browser tab, click on the Application history tab, and click the Refresh icon to see the YARN history information
 
@@ -32,7 +32,7 @@ By clicking on View Logs, you can see the actual log files.  Note: there may a f
 
 ## Check status and logs on Spark UI
 
-Spark UI displays useful information about the application you submit on Amazon EMR.
+The Spark History Server UI displays useful information about the Spark applications you submit on Amazon EMR.
 
 * Click on the Summary tab and then on the Spark history server UI link
 

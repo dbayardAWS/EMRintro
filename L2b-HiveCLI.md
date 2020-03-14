@@ -1,4 +1,4 @@
-# # Working with Hive and Pig, continued
+# Working with Hive and Pig, continued
 
 ## Interacting with the Hive CLI
 
@@ -58,7 +58,7 @@ You should see output similar to this:
 
 ![screenshot](images/H6.png)
 
-* Type "exit;" to exit the Hive Shell CLI
+* Type "quit;" to quit the Hive Shell CLI
 
 ## Congratulations - you have interacted with Hive using the Hive CLI
 You used the Hive Shell CLI to run a Hive CREATE EXTERNAL TABLE to define an external table pointing to your CSV datafile stored on S3 and then you ran a SELECT statement against your table to verify that it worked.

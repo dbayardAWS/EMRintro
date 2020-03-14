@@ -1,4 +1,4 @@
-# # Working with Hive and Pig, continued
+# Working with Hive and Pig, continued
 
 In this exercise, we will interact with our EMR Cluster using EMR Steps.
 

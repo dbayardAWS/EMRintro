@@ -1,4 +1,4 @@
-# # Working with Spark
+# Working with Spark
 
 This lab demonstrates submitting and monitoring Spark-based ETL work to an Amazon EMR cluster.
 
@@ -81,7 +81,7 @@ The spark script should run and you should see output similar to this:
 
 ![screenshot](images/SP4.png)
 
-If you scroll up through the output you will see some of the Spark print statement outputs, such as this:
+If you scroll up through the output you will see some of the output from the Spark print statements in your script, such as this:
 
 ![screenshot](images/SP5.png)
 
