@@ -14,6 +14,8 @@ Hint: Please use a browser other than Internet Explorer.
 
 ![screenshot](images/EE2.png)
 
+Note: If you get a message that the Event is Not Running, then please be patient and wait at this step.  Your Lab Instructor has not yet started the lab but will do so when ready.
+
 
 ## Launch the AWS Management Console
 
