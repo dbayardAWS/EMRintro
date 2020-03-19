@@ -8,8 +8,8 @@ Learn more about Amazon EMR [here](https://aws.amazon.com/emr/).
 |Part |Lab Name |Lab Description |
 |---- |---- | ----|
 |1 |[1a - Getting Started](L1a-StartHere.md) |Connect to the AWS Management Console |
-| |[1b - Cloud9](L1a-Cloud9.md) |Create the Cloud9 Environment |
-| |[1c - EMR](L1a-EMRCreate.md) |Create the EMR Cluster |
+| |[1b - Cloud9](L1b-Cloud9.md) |Create the Cloud9 Environment |
+| |[1c - EMR](L1c-EMRCreate.md) |Create the EMR Cluster |
 |2 |[2a - S3](L2a-S3.md) |Create and Populate your S3 Bucket |
 | |[2b - Hive CLI](L2b-HiveCLI.md) |Run Hive via Hive Shell CLI |
 | |[2c - Hive and EMR Steps](L2c-HiveStep.md) |Run Hive via EMR Steps |
