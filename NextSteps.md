@@ -10,3 +10,4 @@
 |[RStudio and Edge Nodes with EMR](https://aws.amazon.com/blogs/big-data/launch-an-edge-node-for-amazon-emr-to-run-rstudio/) |Blog and Lab setting up an Edge Node to run RStudio with EMR |
 |[Migrating to EMR](https://aws.amazon.com/emr/emr-migration/) |Landing Page for Migrating Hadoop & Spark to EMR |
 |[EMR Resources](https://aws.amazon.com/emr/resources/) |EMR Resources (Documentation, Blogs, Videos) |
+|[Presentation Slides](https://github.com/dbayardAWS/EMRintro/raw/master/EMR%20Immersion%20Day.pdf) |Presentation Slides from the Immersion Day |
